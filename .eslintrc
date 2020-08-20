@@ -22,6 +22,6 @@
     "no-mixed-operators": 0,
     "dot-notation": 0,
     "prefer-object-spread": 0,
-    "import/no-extraneous-dependencies": 0,
+    "import/no-extraneous-dependencies": 0
   }
 }

@@ -13,14 +13,18 @@ app.get('/product', (req, res) => {
   if (itemIdNumber < 100 || itemIdNumber > 10000100 || itemIdNumber === undefined) {
     res.status(404).send('itemID invalid');
   } else {
-    res.sendFile(`${__dirname}/client/index.html`, (err) => {
-      if (err) {
-        res.send(err);
-      } else {
-        res.end();
-      }
-    });
+    res
+      .set('Access-Control-Allow-Origin', '*')
+      .sendFile(`${__dirname}/client/index.html`, (err) => {
+        if (err) {
+          res.send(err);
+        } else {
+          res.end();
+        }
+      });
   }
 });
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log('listening on port 3000');
+});
